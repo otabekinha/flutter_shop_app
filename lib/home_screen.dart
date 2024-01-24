@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/global_variables.dart';
+import 'package:shop_app/product_card.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -66,15 +68,21 @@ class _HomeScreenState extends State<HomeScreen> {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        setState(() {
+                          selectedFilter = filter;
+                        });
+                      },
                       child: Chip(
+                        backgroundColor: selectedFilter == filter
+                            ? Theme.of(context).colorScheme.primary
+                            : const Color.fromRGBO(249, 247, 249, 1),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
                         ),
                         side: const BorderSide(
                           color: Color.fromRGBO(249, 247, 249, 1),
                         ),
-                        backgroundColor: const Color.fromRGBO(249, 247, 249, 1),
                         label: Text(filter),
                         labelStyle: const TextStyle(
                           fontSize: 16,
@@ -88,6 +96,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 },
               ),
+            ),
+            ListView.builder(
+              itemCount: products.length,
+              itemBuilder: (conetect, index) {
+                final product = products[0];
+                return const ProductCard();
+              },
             ),
           ],
         ),
