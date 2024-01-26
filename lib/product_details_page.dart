@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 
-class ProductDetails extends StatelessWidget {
+class ProductDetails extends StatefulWidget {
   final Map<String, Object> product;
   const ProductDetails({
     super.key,
     required this.product,
   });
+
+  @override
+  State<ProductDetails> createState() => _ProductDetailsState();
+}
+
+class _ProductDetailsState extends State<ProductDetails> {
+  int selectedSize = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +29,13 @@ class ProductDetails extends StatelessWidget {
       body: Column(
         children: [
           Text(
-            product['title'] as String,
+            widget.product['title'] as String,
             style: Theme.of(context).textTheme.titleLarge,
           ),
           const Spacer(),
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Image.asset(product['imageUrl'] as String),
+            child: Image.asset(widget.product['imageUrl'] as String),
           ),
           const Spacer(flex: 2),
           Container(
@@ -41,7 +48,7 @@ class ProductDetails extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  '\$${product['price']}',
+                  '\$${widget.product['price']}',
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
                 const SizedBox(height: 10),
@@ -49,14 +56,25 @@ class ProductDetails extends StatelessWidget {
                   height: 50,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: (product['sizes'] as List<int>).length,
+                    itemCount: (widget.product['sizes'] as List<int>).length,
                     itemBuilder: (context, index) {
-                      final size = (product['sizes'] as List<int>)[index];
+                      final size =
+                          (widget.product['sizes'] as List<int>)[index];
                       return Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Chip(
-                          label: Text(
-                            size.toString(),
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              selectedSize = size;
+                            });
+                          },
+                          child: Chip(
+                            label: Text(
+                              size.toString(),
+                            ),
+                            backgroundColor: selectedSize == size
+                                ? Theme.of(context).colorScheme.primary
+                                : null,
                           ),
                         ),
                       );
