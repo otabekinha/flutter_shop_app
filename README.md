@@ -1,6 +1,11 @@
 # Open-source Shopping mobile application for both IOS & Android
 
-<img src="assets/screenshots/shop_app_ios_screenshots.png" width="500">
+## IOS 
+<img src="assets/screenshots/shop_app_ios_screenshots.png" width="700">
+
+## Android
+<img src="assets/screenshots/shop_app_android_screenshots.png" width="700">
+
 
 
 ## Getting Started
