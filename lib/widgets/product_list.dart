@@ -107,7 +107,7 @@ class _ProductListState extends State<ProductList> {
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      childAspectRatio: 1.75,
+                      childAspectRatio: 2,
                     ),
                     itemBuilder: (context, index) {
                       final product = products[index];
@@ -122,7 +122,7 @@ class _ProductListState extends State<ProductList> {
                           );
                         },
                         child: ProductCard(
-                          title: product['itle'] as String,
+                          title: product['title'] as String,
                           price: product['price'] as double,
                           image: product['imageUrl'] as String,
                           backgroundColor: index.isEven
