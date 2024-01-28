@@ -1,4 +1,4 @@
-# Open-source Shopping mobile application for both IOS & Android
+# Flutter Shopping App
 
 ## IOS 
 <img src="assets/screenshots/shop_app_ios_screenshots.png" width="700">
@@ -7,16 +7,24 @@
 <img src="assets/screenshots/shop_app_android_screenshots.png" width="700">
 
 
+A modern and stylish shopping app built with Flutter, featuring a clean and intuitive user interface. This app allows users to explore a collection of shoes, apply filters for different brands, and seamlessly add products to their cart.
 
-## Getting Started
+## Key Features
+- User-friendly product browsing with filtering options.
+- Responsive design for various screen sizes.
+- Cart management with the ability to add and remove products.
+- Detailed product pages with images, prices, and sizes.
+- Smooth navigation with Flutter's routing system.
+- Utilizes Provider for efficient state management.
 
-This project is a starting point for a Flutter application.
+## Technologies Used
+- Flutter framework for building cross-platform mobile applications.
+- Provider package for efficient state management.
+- Dart programming language.
 
-A few resources to get you started if this is your first Flutter project:
+## How to Use
+1. Clone the repository.
+2. Run `flutter pub get` to install dependencies.
+3. Launch the app using `flutter run`.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Feel free to explore, contribute, and customize this Flutter shopping app for your own projects!
