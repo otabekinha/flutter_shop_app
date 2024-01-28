@@ -1,22 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/cart_page.dart';
-
 import 'package:shop_app/product_list.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomePageState extends State<HomePage> {
   int currentPage = 0;
 
-  List<Widget> pages = const [
-    ProductList(),
-    CartPage(),
-  ];
+  List<Widget> pages = const [ProductList(), CartPage()];
 
   @override
   Widget build(BuildContext context) {
@@ -29,12 +25,12 @@ class _HomeScreenState extends State<HomeScreen> {
         iconSize: 35,
         selectedFontSize: 0,
         unselectedFontSize: 0,
-        currentIndex: currentPage,
         onTap: (value) {
           setState(() {
             currentPage = value;
           });
         },
+        currentIndex: currentPage,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
