@@ -1,6 +1,7 @@
-# shop_app
+# Open-source Shopping mobile application for both IOS & Android
 
-A new Flutter project.
+<img src="assets/screenshots/shop_app_ios_screenshots.png" width="100">
+
 
 ## Getting Started
 
